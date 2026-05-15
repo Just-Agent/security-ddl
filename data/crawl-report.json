@@ -1,0 +1,30 @@
+{
+  "generatedAt": "2026-05-15T23:03:40.583Z",
+  "topicId": "security-ddl",
+  "adapters": [
+    {
+      "source": "CTFtime",
+      "url": "https://ctftime.org/event/list/upcoming",
+      "items": [],
+      "note": "TODO: implement parser for CTFtime; keep data/items.json as curated fallback until parser is verified."
+    },
+    {
+      "source": "pwn.college / security training boards",
+      "url": "https://pwn.college",
+      "items": [],
+      "note": "TODO: implement parser for pwn.college / security training boards; keep data/items.json as curated fallback until parser is verified."
+    },
+    {
+      "source": "Bugcrowd programs",
+      "url": "https://bugcrowd.com/programs",
+      "items": [],
+      "note": "TODO: implement parser for Bugcrowd programs; keep data/items.json as curated fallback until parser is verified."
+    },
+    {
+      "source": "HackerOne programs",
+      "url": "https://hackerone.com/directory/programs",
+      "items": [],
+      "note": "TODO: implement parser for HackerOne programs; keep data/items.json as curated fallback until parser is verified."
+    }
+  ]
+}
