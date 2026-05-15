@@ -1,30 +1,64 @@
 {
-  "generatedAt": "2026-05-15T23:03:40.583Z",
   "topicId": "security-ddl",
+  "generatedAt": "2026-05-15T23:54:28.602Z",
+  "adapterCount": 4,
+  "reachableCount": 4,
   "adapters": [
     {
+      "sourceId": "ctftime",
       "source": "CTFtime",
       "url": "https://ctftime.org/event/list/upcoming",
       "items": [],
-      "note": "TODO: implement parser for CTFtime; keep data/items.json as curated fallback until parser is verified."
+      "reachable": true,
+      "httpStatus": 200,
+      "finalUrl": "https://ctftime.org/event/list/upcoming",
+      "title": "CTFtime.org / All about CTF (Capture The Flag)",
+      "contentLength": 25646,
+      "fetchedAt": "2026-05-15T23:54:26.655Z",
+      "note": "Source reachable. Curated data/items.json preserved until item parser is implemented.",
+      "error": null
     },
     {
+      "sourceId": "pwncollege",
       "source": "pwn.college / security training boards",
       "url": "https://pwn.college",
       "items": [],
-      "note": "TODO: implement parser for pwn.college / security training boards; keep data/items.json as curated fallback until parser is verified."
+      "reachable": true,
+      "httpStatus": 200,
+      "finalUrl": "https://pwn.college/",
+      "title": "pwn.college",
+      "contentLength": 20958,
+      "fetchedAt": "2026-05-15T23:54:27.301Z",
+      "note": "Source reachable. Curated data/items.json preserved until item parser is implemented.",
+      "error": null
     },
     {
+      "sourceId": "bugcrowd",
       "source": "Bugcrowd programs",
       "url": "https://bugcrowd.com/programs",
       "items": [],
-      "note": "TODO: implement parser for Bugcrowd programs; keep data/items.json as curated fallback until parser is verified."
+      "reachable": true,
+      "httpStatus": 200,
+      "finalUrl": "https://bugcrowd.com/engagements",
+      "title": "Engagements - Bugcrowd",
+      "contentLength": 108128,
+      "fetchedAt": "2026-05-15T23:54:27.792Z",
+      "note": "Source reachable. Curated data/items.json preserved until item parser is implemented.",
+      "error": null
     },
     {
+      "sourceId": "hackerone",
       "source": "HackerOne programs",
       "url": "https://hackerone.com/directory/programs",
       "items": [],
-      "note": "TODO: implement parser for HackerOne programs; keep data/items.json as curated fallback until parser is verified."
+      "reachable": true,
+      "httpStatus": 200,
+      "finalUrl": "https://hackerone.com/directory/programs",
+      "title": "HackerOne",
+      "contentLength": 1809,
+      "fetchedAt": "2026-05-15T23:54:28.337Z",
+      "note": "Source reachable. Curated data/items.json preserved until item parser is implemented.",
+      "error": null
     }
   ]
 }
