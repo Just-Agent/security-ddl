@@ -1,0 +1,114 @@
+{
+  "topicId": "security-ddl",
+  "generatedAt": "2026-05-15T18:03:01.910Z",
+  "sourcePolicy": "Chinese-first display. Dates are preserved from the hub dataset; crawlers must verify against official pages before strict mode.",
+  "sourceFamilies": [
+    {
+      "id": "ctftime",
+      "name": "CTFtime",
+      "url": "https://ctftime.org/event/list/upcoming",
+      "adapter": "ctfTimeAdapter",
+      "confidence": "official-aggregator"
+    },
+    {
+      "id": "pwncollege",
+      "name": "pwn.college / security training boards",
+      "url": "https://pwn.college",
+      "adapter": "securityTrainingAdapter",
+      "confidence": "official"
+    },
+    {
+      "id": "bugcrowd",
+      "name": "Bugcrowd programs",
+      "url": "https://bugcrowd.com/programs",
+      "adapter": "bugcrowdAdapter",
+      "confidence": "official-aggregator"
+    },
+    {
+      "id": "hackerone",
+      "name": "HackerOne programs",
+      "url": "https://hackerone.com/directory/programs",
+      "adapter": "hackerOneAdapter",
+      "confidence": "official-aggregator"
+    }
+  ],
+  "itemSources": [
+    {
+      "name": "DEF CON",
+      "url": "https://defcon.org",
+      "type": "item-source",
+      "confidence": "official-or-official-entry",
+      "note": "来自当前 Just-DDL 数据项；具体日期仍以链接页面为准。"
+    },
+    {
+      "name": "Google CTF",
+      "url": "https://capturetheflag.withgoogle.com",
+      "type": "item-source",
+      "confidence": "official-or-official-entry",
+      "note": "来自当前 Just-DDL 数据项；具体日期仍以链接页面为准。"
+    },
+    {
+      "name": "Hack The Box CTF",
+      "url": "https://ctf.hackthebox.com",
+      "type": "item-source",
+      "confidence": "official-or-official-entry",
+      "note": "来自当前 Just-DDL 数据项；具体日期仍以链接页面为准。"
+    },
+    {
+      "name": "SECCON",
+      "url": "https://www.seccon.jp",
+      "type": "item-source",
+      "confidence": "official-or-official-entry",
+      "note": "来自当前 Just-DDL 数据项；具体日期仍以链接页面为准。"
+    },
+    {
+      "name": "HITCON CTF",
+      "url": "https://ctf.hitcon.org",
+      "type": "item-source",
+      "confidence": "official-or-official-entry",
+      "note": "来自当前 Just-DDL 数据项；具体日期仍以链接页面为准。"
+    },
+    {
+      "name": "Zero Day Initiative",
+      "url": "https://www.zerodayinitiative.com",
+      "type": "item-source",
+      "confidence": "official-or-official-entry",
+      "note": "来自当前 Just-DDL 数据项；具体日期仍以链接页面为准。"
+    },
+    {
+      "name": "Black Hat",
+      "url": "https://www.blackhat.com",
+      "type": "item-source",
+      "confidence": "official-or-official-entry",
+      "note": "来自当前 Just-DDL 数据项；具体日期仍以链接页面为准。"
+    },
+    {
+      "name": "USENIX Conferences",
+      "url": "https://www.usenix.org/conferences",
+      "type": "item-source",
+      "confidence": "official-or-official-entry",
+      "note": "来自当前 Just-DDL 数据项；具体日期仍以链接页面为准。"
+    },
+    {
+      "name": "ctftime.org",
+      "url": "https://ctftime.org",
+      "type": "item-source",
+      "confidence": "official-or-official-entry",
+      "note": "来自当前 Just-DDL 数据项；具体日期仍以链接页面为准。"
+    },
+    {
+      "name": "HackerOne Hacktivity",
+      "url": "https://hackerone.com/hacktivity",
+      "type": "item-source",
+      "confidence": "official-or-official-entry",
+      "note": "来自当前 Just-DDL 数据项；具体日期仍以链接页面为准。"
+    },
+    {
+      "name": "Real World Crypto",
+      "url": "https://rwc.iacr.org",
+      "type": "item-source",
+      "confidence": "official-or-official-entry",
+      "note": "来自当前 Just-DDL 数据项；具体日期仍以链接页面为准。"
+    }
+  ]
+}
