@@ -1,6 +1,6 @@
 {
   "topicId": "security-ddl",
-  "generatedAt": "2026-05-16T00:34:24.869Z",
+  "generatedAt": "2026-05-16T00:37:04.755Z",
   "adapterCount": 4,
   "reachableCount": 4,
   "parsedItemCount": 14,
@@ -285,7 +285,7 @@
       "finalUrl": "https://ctftime.org/event/list/upcoming",
       "title": "CTFtime.org / All about CTF (Capture The Flag)",
       "contentLength": 25646,
-      "fetchedAt": "2026-05-16T00:34:20.090Z",
+      "fetchedAt": "2026-05-16T00:37:02.663Z",
       "note": "Parsed 14 items from CTFtime upcoming events; rejected 0 date-window outliers.",
       "error": null,
       "parsedItemCount": 14,
@@ -302,7 +302,7 @@
       "finalUrl": "https://pwn.college/",
       "title": "pwn.college",
       "contentLength": 20958,
-      "fetchedAt": "2026-05-16T00:34:21.272Z",
+      "fetchedAt": "2026-05-16T00:37:03.580Z",
       "note": "Source reachable. Curated data/items.json preserved until item parser is implemented.",
       "error": null
     },
@@ -316,7 +316,7 @@
       "finalUrl": "https://bugcrowd.com/engagements",
       "title": "Engagements - Bugcrowd",
       "contentLength": 108128,
-      "fetchedAt": "2026-05-16T00:34:22.056Z",
+      "fetchedAt": "2026-05-16T00:37:04.167Z",
       "note": "Source reachable. Curated data/items.json preserved until item parser is implemented.",
       "error": null
     },
@@ -330,7 +330,7 @@
       "finalUrl": "https://hackerone.com/directory/programs",
       "title": "HackerOne",
       "contentLength": 1809,
-      "fetchedAt": "2026-05-16T00:34:24.179Z",
+      "fetchedAt": "2026-05-16T00:37:04.366Z",
       "note": "Source reachable. Curated data/items.json preserved until item parser is implemented.",
       "error": null
     }
