@@ -1,22 +1,296 @@
 {
   "topicId": "security-ddl",
-  "generatedAt": "2026-05-15T23:54:28.602Z",
+  "generatedAt": "2026-05-16T00:34:24.869Z",
   "adapterCount": 4,
   "reachableCount": 4,
+  "parsedItemCount": 14,
+  "previousParsedItemCount": 14,
+  "parserHealthy": true,
+  "parserDropOk": true,
   "adapters": [
     {
       "sourceId": "ctftime",
       "source": "CTFtime",
       "url": "https://ctftime.org/event/list/upcoming",
-      "items": [],
+      "items": [
+        {
+          "id": "ctftime-3132",
+          "title": "DaVinciCTF 2026",
+          "deadline": "2026-05-16T08:00:00Z",
+          "dateRange": "16 May, 08:00 UTC — 16 May 2026, 17:00 UTC",
+          "location": "Online",
+          "isOnline": true,
+          "tags": [
+            "CTF",
+            "security",
+            "Jeopardy"
+          ],
+          "url": "https://ctftime.org/event/3132",
+          "status": "upcoming",
+          "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
+          "stage": "upcoming",
+          "source": "ctftime",
+          "type": "contest"
+        },
+        {
+          "id": "ctftime-3214",
+          "title": "UralCUP 2026",
+          "deadline": "2026-05-17T05:00:00Z",
+          "dateRange": "17 May, 05:00 UTC — 17 May 2026, 13:00 UTC",
+          "location": "Online",
+          "isOnline": true,
+          "tags": [
+            "CTF",
+            "security",
+            "Jeopardy"
+          ],
+          "url": "https://ctftime.org/event/3214",
+          "status": "upcoming",
+          "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
+          "stage": "upcoming",
+          "source": "ctftime",
+          "type": "contest"
+        },
+        {
+          "id": "ctftime-3269",
+          "title": "0xV01D CTF 2026",
+          "deadline": "2026-05-18T04:00:00Z",
+          "dateRange": "18 May, 04:00 UTC — 20 May 2026, 04:00 UTC",
+          "location": "Online",
+          "isOnline": true,
+          "tags": [
+            "CTF",
+            "security",
+            "Jeopardy"
+          ],
+          "url": "https://ctftime.org/event/3269",
+          "status": "upcoming",
+          "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
+          "stage": "upcoming",
+          "source": "ctftime",
+          "type": "contest"
+        },
+        {
+          "id": "ctftime-3277",
+          "title": "Hack for a Change 2026 May: UN SDG 1",
+          "deadline": "2026-05-19T00:00:00Z",
+          "dateRange": "19 May, 00:00 UTC — 21 May 2026, 23:59 UTC",
+          "location": "Online",
+          "isOnline": true,
+          "tags": [
+            "CTF",
+            "security",
+            "Jeopardy"
+          ],
+          "url": "https://ctftime.org/event/3277",
+          "status": "upcoming",
+          "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
+          "stage": "upcoming",
+          "source": "ctftime",
+          "type": "contest"
+        },
+        {
+          "id": "ctftime-3205",
+          "title": "DEF CON CTF Qualifier 2026",
+          "deadline": "2026-05-22T21:00:00Z",
+          "dateRange": "22 May, 21:00 UTC — 24 May 2026, 21:00 UTC",
+          "location": "Online",
+          "isOnline": true,
+          "tags": [
+            "CTF",
+            "security",
+            "Jeopardy"
+          ],
+          "url": "https://ctftime.org/event/3205",
+          "status": "upcoming",
+          "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
+          "stage": "upcoming",
+          "source": "ctftime",
+          "type": "contest"
+        },
+        {
+          "id": "ctftime-3136",
+          "title": "SecLeaf Q2 CTF 2026",
+          "deadline": "2026-05-23T14:00:00Z",
+          "dateRange": "23 May, 14:00 UTC — 24 May 2026, 14:00 UTC",
+          "location": "Online",
+          "isOnline": true,
+          "tags": [
+            "CTF",
+            "security",
+            "Jeopardy"
+          ],
+          "url": "https://ctftime.org/event/3136",
+          "status": "upcoming",
+          "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
+          "stage": "upcoming",
+          "source": "ctftime",
+          "type": "contest"
+        },
+        {
+          "id": "ctftime-3271",
+          "title": "ZEROBREACH CTF",
+          "deadline": "2026-05-24T04:30:00Z",
+          "dateRange": "24 May, 04:30 UTC — 24 May 2026, 16:30 UTC",
+          "location": "Online",
+          "isOnline": true,
+          "tags": [
+            "CTF",
+            "security",
+            "Jeopardy"
+          ],
+          "url": "https://ctftime.org/event/3271",
+          "status": "upcoming",
+          "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
+          "stage": "upcoming",
+          "source": "ctftime",
+          "type": "contest"
+        },
+        {
+          "id": "ctftime-3270",
+          "title": "Hackअस्त्र",
+          "deadline": "2026-05-29T10:15:00Z",
+          "dateRange": "29 May, 10:15 UTC — 30 May 2026, 17:15 UTC",
+          "location": "Online",
+          "isOnline": true,
+          "tags": [
+            "CTF",
+            "security",
+            "Jeopardy"
+          ],
+          "url": "https://ctftime.org/event/3270",
+          "status": "upcoming",
+          "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
+          "stage": "upcoming",
+          "source": "ctftime",
+          "type": "contest"
+        },
+        {
+          "id": "ctftime-3174",
+          "title": "Hardwear.io USA 2026 Hardware CTF",
+          "deadline": "2026-05-29T17:00:00Z",
+          "dateRange": "29 May, 17:00 UTC — 30 May 2026, 20:50 UTC",
+          "location": "US, Santa Clara",
+          "isOnline": false,
+          "tags": [
+            "CTF",
+            "security",
+            "Jeopardy"
+          ],
+          "url": "https://ctftime.org/event/3174",
+          "status": "upcoming",
+          "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
+          "stage": "upcoming",
+          "source": "ctftime",
+          "type": "contest"
+        },
+        {
+          "id": "ctftime-3209",
+          "title": "THEM?!CTF 2026",
+          "deadline": "2026-05-29T18:00:00Z",
+          "dateRange": "29 May, 18:00 UTC — 31 May 2026, 18:00 UTC",
+          "location": "Online",
+          "isOnline": true,
+          "tags": [
+            "CTF",
+            "security",
+            "Jeopardy"
+          ],
+          "url": "https://ctftime.org/event/3209",
+          "status": "upcoming",
+          "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
+          "stage": "upcoming",
+          "source": "ctftime",
+          "type": "contest"
+        },
+        {
+          "id": "ctftime-3247",
+          "title": "BYUCTF 2026",
+          "deadline": "2026-05-30T00:00:00Z",
+          "dateRange": "30 May, 00:00 UTC — 31 May 2026, 00:00 UTC",
+          "location": "Online",
+          "isOnline": true,
+          "tags": [
+            "CTF",
+            "security",
+            "Jeopardy"
+          ],
+          "url": "https://ctftime.org/event/3247",
+          "status": "upcoming",
+          "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
+          "stage": "upcoming",
+          "source": "ctftime",
+          "type": "contest"
+        },
+        {
+          "id": "ctftime-3178",
+          "title": "Grey Cat The Flag 2026 Qualifiers",
+          "deadline": "2026-05-30T02:00:00Z",
+          "dateRange": "30 May, 02:00 UTC — 31 May 2026, 02:00 UTC",
+          "location": "Online",
+          "isOnline": true,
+          "tags": [
+            "CTF",
+            "security",
+            "Jeopardy"
+          ],
+          "url": "https://ctftime.org/event/3178",
+          "status": "upcoming",
+          "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
+          "stage": "upcoming",
+          "source": "ctftime",
+          "type": "contest"
+        },
+        {
+          "id": "ctftime-3220",
+          "title": "Pwn2Play Open CTF",
+          "deadline": "2026-05-30T09:00:00Z",
+          "dateRange": "30 May, 09:00 UTC — 30 May 2026, 18:00 UTC",
+          "location": "Online",
+          "isOnline": true,
+          "tags": [
+            "CTF",
+            "security",
+            "Jeopardy"
+          ],
+          "url": "https://ctftime.org/event/3220",
+          "status": "upcoming",
+          "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
+          "stage": "upcoming",
+          "source": "ctftime",
+          "type": "contest"
+        },
+        {
+          "id": "ctftime-3243",
+          "title": "WhiteHats TrojanCTF 2026",
+          "deadline": "2026-05-30T09:00:00Z",
+          "dateRange": "30 May, 09:00 UTC — 30 May 2026, 19:00 UTC",
+          "location": "Netherlands, Eindhoven",
+          "isOnline": false,
+          "tags": [
+            "CTF",
+            "security",
+            "Jeopardy"
+          ],
+          "url": "https://ctftime.org/event/3243",
+          "status": "upcoming",
+          "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
+          "stage": "upcoming",
+          "source": "ctftime",
+          "type": "contest"
+        }
+      ],
       "reachable": true,
       "httpStatus": 200,
       "finalUrl": "https://ctftime.org/event/list/upcoming",
       "title": "CTFtime.org / All about CTF (Capture The Flag)",
       "contentLength": 25646,
-      "fetchedAt": "2026-05-15T23:54:26.655Z",
-      "note": "Source reachable. Curated data/items.json preserved until item parser is implemented.",
-      "error": null
+      "fetchedAt": "2026-05-16T00:34:20.090Z",
+      "note": "Parsed 14 items from CTFtime upcoming events; rejected 0 date-window outliers.",
+      "error": null,
+      "parsedItemCount": 14,
+      "invalidItemCount": 0,
+      "parserHealthy": true
     },
     {
       "sourceId": "pwncollege",
@@ -28,7 +302,7 @@
       "finalUrl": "https://pwn.college/",
       "title": "pwn.college",
       "contentLength": 20958,
-      "fetchedAt": "2026-05-15T23:54:27.301Z",
+      "fetchedAt": "2026-05-16T00:34:21.272Z",
       "note": "Source reachable. Curated data/items.json preserved until item parser is implemented.",
       "error": null
     },
@@ -42,7 +316,7 @@
       "finalUrl": "https://bugcrowd.com/engagements",
       "title": "Engagements - Bugcrowd",
       "contentLength": 108128,
-      "fetchedAt": "2026-05-15T23:54:27.792Z",
+      "fetchedAt": "2026-05-16T00:34:22.056Z",
       "note": "Source reachable. Curated data/items.json preserved until item parser is implemented.",
       "error": null
     },
@@ -56,7 +330,7 @@
       "finalUrl": "https://hackerone.com/directory/programs",
       "title": "HackerOne",
       "contentLength": 1809,
-      "fetchedAt": "2026-05-15T23:54:28.337Z",
+      "fetchedAt": "2026-05-16T00:34:24.179Z",
       "note": "Source reachable. Curated data/items.json preserved until item parser is implemented.",
       "error": null
     }
