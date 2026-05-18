@@ -1,9 +1,9 @@
 {
   "topicId": "security-ddl",
-  "generatedAt": "2026-05-16T00:34:24.869Z",
+  "generatedAt": "2026-05-18T06:35:21.246Z",
   "adapterCount": 4,
   "reachableCount": 4,
-  "parsedItemCount": 14,
+  "parsedItemCount": 12,
   "previousParsedItemCount": 14,
   "parserHealthy": true,
   "parserDropOk": true,
@@ -13,63 +13,6 @@
       "source": "CTFtime",
       "url": "https://ctftime.org/event/list/upcoming",
       "items": [
-        {
-          "id": "ctftime-3132",
-          "title": "DaVinciCTF 2026",
-          "deadline": "2026-05-16T08:00:00Z",
-          "dateRange": "16 May, 08:00 UTC — 16 May 2026, 17:00 UTC",
-          "location": "Online",
-          "isOnline": true,
-          "tags": [
-            "CTF",
-            "security",
-            "Jeopardy"
-          ],
-          "url": "https://ctftime.org/event/3132",
-          "status": "upcoming",
-          "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
-          "stage": "upcoming",
-          "source": "ctftime",
-          "type": "contest"
-        },
-        {
-          "id": "ctftime-3214",
-          "title": "UralCUP 2026",
-          "deadline": "2026-05-17T05:00:00Z",
-          "dateRange": "17 May, 05:00 UTC — 17 May 2026, 13:00 UTC",
-          "location": "Online",
-          "isOnline": true,
-          "tags": [
-            "CTF",
-            "security",
-            "Jeopardy"
-          ],
-          "url": "https://ctftime.org/event/3214",
-          "status": "upcoming",
-          "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
-          "stage": "upcoming",
-          "source": "ctftime",
-          "type": "contest"
-        },
-        {
-          "id": "ctftime-3269",
-          "title": "0xV01D CTF 2026",
-          "deadline": "2026-05-18T04:00:00Z",
-          "dateRange": "18 May, 04:00 UTC — 20 May 2026, 04:00 UTC",
-          "location": "Online",
-          "isOnline": true,
-          "tags": [
-            "CTF",
-            "security",
-            "Jeopardy"
-          ],
-          "url": "https://ctftime.org/event/3269",
-          "status": "upcoming",
-          "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
-          "stage": "upcoming",
-          "source": "ctftime",
-          "type": "contest"
-        },
         {
           "id": "ctftime-3277",
           "title": "Hack for a Change 2026 May: UN SDG 1",
@@ -102,6 +45,25 @@
             "Jeopardy"
           ],
           "url": "https://ctftime.org/event/3205",
+          "status": "upcoming",
+          "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
+          "stage": "upcoming",
+          "source": "ctftime",
+          "type": "contest"
+        },
+        {
+          "id": "ctftime-3284",
+          "title": "Hack4Krak CTF 2026 - High School Edition",
+          "deadline": "2026-05-23T08:00:00Z",
+          "dateRange": "23 May, 08:00 UTC — 24 May 2026, 14:00 UTC",
+          "location": "Poland, Cracow",
+          "isOnline": false,
+          "tags": [
+            "CTF",
+            "security",
+            "Jeopardy"
+          ],
+          "url": "https://ctftime.org/event/3284",
           "status": "upcoming",
           "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
           "stage": "upcoming",
@@ -284,11 +246,11 @@
       "httpStatus": 200,
       "finalUrl": "https://ctftime.org/event/list/upcoming",
       "title": "CTFtime.org / All about CTF (Capture The Flag)",
-      "contentLength": 25646,
-      "fetchedAt": "2026-05-16T00:34:20.090Z",
-      "note": "Parsed 14 items from CTFtime upcoming events; rejected 0 date-window outliers.",
+      "contentLength": 25254,
+      "fetchedAt": "2026-05-18T06:35:20.335Z",
+      "note": "Parsed 12 items from CTFtime upcoming events; rejected 0 date-window outliers.",
       "error": null,
-      "parsedItemCount": 14,
+      "parsedItemCount": 12,
       "invalidItemCount": 0,
       "parserHealthy": true
     },
@@ -302,7 +264,7 @@
       "finalUrl": "https://pwn.college/",
       "title": "pwn.college",
       "contentLength": 20958,
-      "fetchedAt": "2026-05-16T00:34:21.272Z",
+      "fetchedAt": "2026-05-18T06:35:20.383Z",
       "note": "Source reachable. Curated data/items.json preserved until item parser is implemented.",
       "error": null
     },
@@ -316,7 +278,7 @@
       "finalUrl": "https://bugcrowd.com/engagements",
       "title": "Engagements - Bugcrowd",
       "contentLength": 108128,
-      "fetchedAt": "2026-05-16T00:34:22.056Z",
+      "fetchedAt": "2026-05-18T06:35:20.384Z",
       "note": "Source reachable. Curated data/items.json preserved until item parser is implemented.",
       "error": null
     },
@@ -330,7 +292,7 @@
       "finalUrl": "https://hackerone.com/directory/programs",
       "title": "HackerOne",
       "contentLength": 1809,
-      "fetchedAt": "2026-05-16T00:34:24.179Z",
+      "fetchedAt": "2026-05-18T06:35:20.386Z",
       "note": "Source reachable. Curated data/items.json preserved until item parser is implemented.",
       "error": null
     }
