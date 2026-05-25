@@ -1,10 +1,10 @@
 {
   "topicId": "security-ddl",
-  "generatedAt": "2026-05-18T06:35:21.246Z",
+  "generatedAt": "2026-05-25T06:49:06.984Z",
   "adapterCount": 4,
   "reachableCount": 4,
-  "parsedItemCount": 12,
-  "previousParsedItemCount": 14,
+  "parsedItemCount": 7,
+  "previousParsedItemCount": 12,
   "parserHealthy": true,
   "parserDropOk": true,
   "adapters": [
@@ -13,101 +13,6 @@
       "source": "CTFtime",
       "url": "https://ctftime.org/event/list/upcoming",
       "items": [
-        {
-          "id": "ctftime-3277",
-          "title": "Hack for a Change 2026 May: UN SDG 1",
-          "deadline": "2026-05-19T00:00:00Z",
-          "dateRange": "19 May, 00:00 UTC — 21 May 2026, 23:59 UTC",
-          "location": "Online",
-          "isOnline": true,
-          "tags": [
-            "CTF",
-            "security",
-            "Jeopardy"
-          ],
-          "url": "https://ctftime.org/event/3277",
-          "status": "upcoming",
-          "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
-          "stage": "upcoming",
-          "source": "ctftime",
-          "type": "contest"
-        },
-        {
-          "id": "ctftime-3205",
-          "title": "DEF CON CTF Qualifier 2026",
-          "deadline": "2026-05-22T21:00:00Z",
-          "dateRange": "22 May, 21:00 UTC — 24 May 2026, 21:00 UTC",
-          "location": "Online",
-          "isOnline": true,
-          "tags": [
-            "CTF",
-            "security",
-            "Jeopardy"
-          ],
-          "url": "https://ctftime.org/event/3205",
-          "status": "upcoming",
-          "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
-          "stage": "upcoming",
-          "source": "ctftime",
-          "type": "contest"
-        },
-        {
-          "id": "ctftime-3284",
-          "title": "Hack4Krak CTF 2026 - High School Edition",
-          "deadline": "2026-05-23T08:00:00Z",
-          "dateRange": "23 May, 08:00 UTC — 24 May 2026, 14:00 UTC",
-          "location": "Poland, Cracow",
-          "isOnline": false,
-          "tags": [
-            "CTF",
-            "security",
-            "Jeopardy"
-          ],
-          "url": "https://ctftime.org/event/3284",
-          "status": "upcoming",
-          "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
-          "stage": "upcoming",
-          "source": "ctftime",
-          "type": "contest"
-        },
-        {
-          "id": "ctftime-3136",
-          "title": "SecLeaf Q2 CTF 2026",
-          "deadline": "2026-05-23T14:00:00Z",
-          "dateRange": "23 May, 14:00 UTC — 24 May 2026, 14:00 UTC",
-          "location": "Online",
-          "isOnline": true,
-          "tags": [
-            "CTF",
-            "security",
-            "Jeopardy"
-          ],
-          "url": "https://ctftime.org/event/3136",
-          "status": "upcoming",
-          "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
-          "stage": "upcoming",
-          "source": "ctftime",
-          "type": "contest"
-        },
-        {
-          "id": "ctftime-3271",
-          "title": "ZEROBREACH CTF",
-          "deadline": "2026-05-24T04:30:00Z",
-          "dateRange": "24 May, 04:30 UTC — 24 May 2026, 16:30 UTC",
-          "location": "Online",
-          "isOnline": true,
-          "tags": [
-            "CTF",
-            "security",
-            "Jeopardy"
-          ],
-          "url": "https://ctftime.org/event/3271",
-          "status": "upcoming",
-          "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
-          "stage": "upcoming",
-          "source": "ctftime",
-          "type": "contest"
-        },
         {
           "id": "ctftime-3270",
           "title": "Hackअस्त्र",
@@ -246,11 +151,11 @@
       "httpStatus": 200,
       "finalUrl": "https://ctftime.org/event/list/upcoming",
       "title": "CTFtime.org / All about CTF (Capture The Flag)",
-      "contentLength": 25254,
-      "fetchedAt": "2026-05-18T06:35:20.335Z",
-      "note": "Parsed 12 items from CTFtime upcoming events; rejected 0 date-window outliers.",
+      "contentLength": 24077,
+      "fetchedAt": "2026-05-25T06:49:06.123Z",
+      "note": "Parsed 7 items from CTFtime upcoming events; rejected 0 date-window outliers.",
       "error": null,
-      "parsedItemCount": 12,
+      "parsedItemCount": 7,
       "invalidItemCount": 0,
       "parserHealthy": true
     },
@@ -264,7 +169,7 @@
       "finalUrl": "https://pwn.college/",
       "title": "pwn.college",
       "contentLength": 20958,
-      "fetchedAt": "2026-05-18T06:35:20.383Z",
+      "fetchedAt": "2026-05-25T06:49:06.270Z",
       "note": "Source reachable. Curated data/items.json preserved until item parser is implemented.",
       "error": null
     },
@@ -278,7 +183,7 @@
       "finalUrl": "https://bugcrowd.com/engagements",
       "title": "Engagements - Bugcrowd",
       "contentLength": 108128,
-      "fetchedAt": "2026-05-18T06:35:20.384Z",
+      "fetchedAt": "2026-05-25T06:49:06.271Z",
       "note": "Source reachable. Curated data/items.json preserved until item parser is implemented.",
       "error": null
     },
@@ -292,7 +197,7 @@
       "finalUrl": "https://hackerone.com/directory/programs",
       "title": "HackerOne",
       "contentLength": 1809,
-      "fetchedAt": "2026-05-18T06:35:20.386Z",
+      "fetchedAt": "2026-05-25T06:49:06.272Z",
       "note": "Source reachable. Curated data/items.json preserved until item parser is implemented.",
       "error": null
     }
