@@ -1,12 +1,15 @@
 {
   "topicId": "security-ddl",
-  "generatedAt": "2026-05-25T06:49:06.984Z",
+  "generatedAt": "2026-05-26T11:37:35.779Z",
   "adapterCount": 4,
   "reachableCount": 4,
   "parsedItemCount": 7,
-  "previousParsedItemCount": 12,
+  "previousParsedItemCount": null,
   "parserHealthy": true,
   "parserDropOk": true,
+  "existingCtftimeItems": 12,
+  "existingCtftimeOfficialUrlCount": 9,
+  "existingCtftimeUnreachableOfficialUrlCount": 3,
   "adapters": [
     {
       "sourceId": "ctftime",
@@ -26,10 +29,11 @@
             "Jeopardy"
           ],
           "url": "https://ctftime.org/event/3270",
+          "sourceUrl": "https://ctftime.org/event/3270",
           "status": "upcoming",
           "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
           "stage": "upcoming",
-          "source": "ctftime",
+          "source": "CTFtime event page",
           "type": "contest"
         },
         {
@@ -44,12 +48,15 @@
             "security",
             "Jeopardy"
           ],
-          "url": "https://ctftime.org/event/3174",
+          "url": "https://hwc.tf/",
+          "sourceUrl": "https://ctftime.org/event/3174",
           "status": "upcoming",
-          "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
+          "description": "Parsed from CTFtime upcoming events; official URL extracted from the event detail page. Deadline represents the event start time, not a registration deadline.",
           "stage": "upcoming",
-          "source": "ctftime",
-          "type": "contest"
+          "source": "CTFtime event page + official URL",
+          "type": "contest",
+          "canonicalUrl": "https://hwc.tf/",
+          "verificationLevel": "official_via_ctftime"
         },
         {
           "id": "ctftime-3209",
@@ -63,12 +70,15 @@
             "security",
             "Jeopardy"
           ],
-          "url": "https://ctftime.org/event/3209",
+          "url": "https://themctf.com/",
+          "sourceUrl": "https://ctftime.org/event/3209",
           "status": "upcoming",
-          "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
+          "description": "Parsed from CTFtime upcoming events; official URL extracted from the event detail page. Deadline represents the event start time, not a registration deadline.",
           "stage": "upcoming",
-          "source": "ctftime",
-          "type": "contest"
+          "source": "CTFtime event page + official URL",
+          "type": "contest",
+          "canonicalUrl": "https://themctf.com/",
+          "verificationLevel": "official_via_ctftime"
         },
         {
           "id": "ctftime-3247",
@@ -82,12 +92,15 @@
             "security",
             "Jeopardy"
           ],
-          "url": "https://ctftime.org/event/3247",
+          "url": "https://ctfd.cyberjousting.com/",
+          "sourceUrl": "https://ctftime.org/event/3247",
           "status": "upcoming",
-          "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
+          "description": "Parsed from CTFtime upcoming events; official URL extracted from the event detail page. Deadline represents the event start time, not a registration deadline.",
           "stage": "upcoming",
-          "source": "ctftime",
-          "type": "contest"
+          "source": "CTFtime event page + official URL",
+          "type": "contest",
+          "canonicalUrl": "https://ctfd.cyberjousting.com/",
+          "verificationLevel": "official_via_ctftime"
         },
         {
           "id": "ctftime-3178",
@@ -101,12 +114,15 @@
             "security",
             "Jeopardy"
           ],
-          "url": "https://ctftime.org/event/3178",
+          "url": "https://ctf.nusgreyhats.org/",
+          "sourceUrl": "https://ctftime.org/event/3178",
           "status": "upcoming",
-          "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
+          "description": "Parsed from CTFtime upcoming events; official URL extracted from the event detail page. Deadline represents the event start time, not a registration deadline.",
           "stage": "upcoming",
-          "source": "ctftime",
-          "type": "contest"
+          "source": "CTFtime event page + official URL",
+          "type": "contest",
+          "canonicalUrl": "https://ctf.nusgreyhats.org/",
+          "verificationLevel": "official_via_ctftime"
         },
         {
           "id": "ctftime-3220",
@@ -121,10 +137,11 @@
             "Jeopardy"
           ],
           "url": "https://ctftime.org/event/3220",
+          "sourceUrl": "https://ctftime.org/event/3220",
           "status": "upcoming",
           "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
           "stage": "upcoming",
-          "source": "ctftime",
+          "source": "CTFtime event page",
           "type": "contest"
         },
         {
@@ -139,25 +156,30 @@
             "security",
             "Jeopardy"
           ],
-          "url": "https://ctftime.org/event/3243",
+          "url": "https://eshatrojan.nl/trojanctf",
+          "sourceUrl": "https://ctftime.org/event/3243",
           "status": "upcoming",
-          "description": "Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.",
+          "description": "Parsed from CTFtime upcoming events; official URL extracted from the event detail page. Deadline represents the event start time, not a registration deadline.",
           "stage": "upcoming",
-          "source": "ctftime",
-          "type": "contest"
+          "source": "CTFtime event page + official URL",
+          "type": "contest",
+          "canonicalUrl": "https://eshatrojan.nl/trojanctf",
+          "verificationLevel": "official_via_ctftime"
         }
       ],
       "reachable": true,
       "httpStatus": 200,
       "finalUrl": "https://ctftime.org/event/list/upcoming",
       "title": "CTFtime.org / All about CTF (Capture The Flag)",
-      "contentLength": 24077,
-      "fetchedAt": "2026-05-25T06:49:06.123Z",
-      "note": "Parsed 7 items from CTFtime upcoming events; rejected 0 date-window outliers.",
+      "contentLength": 24298,
+      "fetchedAt": "2026-05-26T11:36:30.930Z",
+      "note": "Parsed 7 items from CTFtime upcoming events; extracted 5 reachable official URLs from detail pages; kept 2 items on CTFtime because their official URLs were unreachable; rejected 0 date-window outliers.",
       "error": null,
       "parsedItemCount": 7,
       "invalidItemCount": 0,
-      "parserHealthy": true
+      "parserHealthy": true,
+      "officialUrlCount": 5,
+      "unreachableOfficialUrlCount": 2
     },
     {
       "sourceId": "pwncollege",
@@ -169,7 +191,7 @@
       "finalUrl": "https://pwn.college/",
       "title": "pwn.college",
       "contentLength": 20958,
-      "fetchedAt": "2026-05-25T06:49:06.270Z",
+      "fetchedAt": "2026-05-26T11:36:31.019Z",
       "note": "Source reachable. Curated data/items.json preserved until item parser is implemented.",
       "error": null
     },
@@ -183,7 +205,7 @@
       "finalUrl": "https://bugcrowd.com/engagements",
       "title": "Engagements - Bugcrowd",
       "contentLength": 108128,
-      "fetchedAt": "2026-05-25T06:49:06.271Z",
+      "fetchedAt": "2026-05-26T11:36:31.022Z",
       "note": "Source reachable. Curated data/items.json preserved until item parser is implemented.",
       "error": null
     },
@@ -197,7 +219,7 @@
       "finalUrl": "https://hackerone.com/directory/programs",
       "title": "HackerOne",
       "contentLength": 1809,
-      "fetchedAt": "2026-05-25T06:49:06.272Z",
+      "fetchedAt": "2026-05-26T11:36:31.024Z",
       "note": "Source reachable. Curated data/items.json preserved until item parser is implemented.",
       "error": null
     }

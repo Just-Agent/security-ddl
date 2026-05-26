@@ -73,6 +73,117 @@ const CTFTIME_MIN_ITEMS = 5;
 const CTFTIME_MAX_FUTURE_DAYS = Number(process.env.CTFTIME_MAX_FUTURE_DAYS) || 400;
 
 const MONTHS = { jan:1,feb:2,mar:3,apr:4,may:5,jun:6,jul:7,aug:8,sep:9,oct:10,nov:11,dec:12 };
+const CTFTIME_EVENT_DETAIL_CONCURRENCY = Number(process.env.CTFTIME_EVENT_DETAIL_CONCURRENCY) || 4;
+
+function decodeHtml(value) {
+  return String(value || '')
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>');
+}
+
+function absoluteUrl(url, base) {
+  try {
+    return new URL(decodeHtml(url), base).toString();
+  } catch {
+    return null;
+  }
+}
+
+function extractOfficialUrl(html, pageUrl) {
+  const officialMatch = html.match(/Official\s+URL:\s*<a[^>]+href="([^"]+)"[^>]*>/i);
+  if (!officialMatch) return null;
+  const officialUrl = absoluteUrl(officialMatch[1], pageUrl);
+  if (!officialUrl || !/^https?:\/\//.test(officialUrl)) return null;
+  return officialUrl;
+}
+
+async function fetchCtftimeEventOfficialUrl(eventUrl) {
+  try {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), REACHABILITY_TIMEOUT_MS);
+    const res = await fetch(eventUrl, {
+      redirect: 'follow',
+      signal: controller.signal,
+      headers: { 'User-Agent': USER_AGENT }
+    });
+    clearTimeout(timer);
+    if (res.status < 200 || res.status >= 400) return null;
+    const text = await res.text();
+    return extractOfficialUrl(text, res.url || eventUrl);
+  } catch {
+    return null;
+  }
+}
+
+async function isReachableOfficialUrl(url) {
+  for (const method of ['HEAD', 'GET']) {
+    try {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), REACHABILITY_TIMEOUT_MS);
+      const res = await fetch(url, {
+        method,
+        redirect: 'follow',
+        signal: controller.signal,
+        headers: method === 'GET'
+          ? { 'User-Agent': USER_AGENT, Range: 'bytes=0-1023' }
+          : { 'User-Agent': USER_AGENT }
+      });
+      clearTimeout(timer);
+      if (res.status < 400 || res.status === 405) return true;
+      if (![403, 404, 405, 429, 500, 502, 503].includes(res.status)) return false;
+    } catch {
+      // Try the next method before treating it as unreachable.
+    }
+  }
+  return false;
+}
+
+function fallbackToCtftimeEvent(item, ctftimeUrl) {
+  const { canonicalUrl, verificationLevel, ...rest } = item;
+  return {
+    ...rest,
+    url: ctftimeUrl,
+    sourceUrl: ctftimeUrl,
+    source: 'CTFtime event page',
+    description: 'Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.'
+  };
+}
+
+async function enrichCtftimeItemsWithOfficialUrls(items) {
+  const enriched = [];
+  let officialUrlCount = 0;
+  let unreachableOfficialUrlCount = 0;
+  for (let index = 0; index < items.length; index += CTFTIME_EVENT_DETAIL_CONCURRENCY) {
+    const batch = items.slice(index, index + CTFTIME_EVENT_DETAIL_CONCURRENCY);
+    const batchResults = await Promise.all(batch.map(async item => {
+      const ctftimeUrl = item.sourceUrl || item.url;
+      const officialUrl = /^https:\/\/ctftime\.org\/event\/\d+/i.test(ctftimeUrl || '')
+        ? await fetchCtftimeEventOfficialUrl(ctftimeUrl)
+        : null;
+      if (!officialUrl) return item;
+      const reachable = await isReachableOfficialUrl(officialUrl);
+      if (!reachable) {
+        unreachableOfficialUrlCount += 1;
+        return fallbackToCtftimeEvent(item, ctftimeUrl);
+      }
+      officialUrlCount += 1;
+      return {
+        ...item,
+        url: officialUrl,
+        canonicalUrl: officialUrl,
+        sourceUrl: ctftimeUrl,
+        source: 'CTFtime event page + official URL',
+        verificationLevel: 'official_via_ctftime',
+        description: 'Parsed from CTFtime upcoming events; official URL extracted from the event detail page. Deadline represents the event start time, not a registration deadline.'
+      };
+    }));
+    enriched.push(...batchResults);
+  }
+  return { items: enriched, officialUrlCount, unreachableOfficialUrlCount };
+}
 
 async function parseCtftimeItems() {
   const report = {
@@ -157,6 +268,8 @@ async function parseCtftimeItems() {
       const locLower = (location + ' ' + format).toLowerCase();
       const isOnline = locLower.includes('on-line') || locLower.includes('online') || locLower.includes('remote');
 
+      const eventUrl = 'https://ctftime.org' + href;
+
       report.items.push({
         id: itemId,
         title: title,
@@ -165,7 +278,8 @@ async function parseCtftimeItems() {
         location: isOnline ? 'Online' : location || 'TBD',
         isOnline: isOnline,
         tags: ['CTF', 'security', format || 'Jeopardy'],
-        url: 'https://ctftime.org' + href,
+        url: eventUrl,
+        sourceUrl: eventUrl,
         status: 'upcoming',
         description: 'Parsed from CTFtime upcoming events. Deadline represents the event start time, not a registration deadline.',
         stage: 'upcoming',
@@ -173,9 +287,13 @@ async function parseCtftimeItems() {
         type: 'contest'
       });
     }
+    const enrichment = await enrichCtftimeItemsWithOfficialUrls(report.items);
+    report.items = enrichment.items;
+    report.officialUrlCount = enrichment.officialUrlCount;
     report.parsedItemCount = report.items.length;
     report.parserHealthy = report.parsedItemCount >= CTFTIME_MIN_ITEMS;
-    report.note = 'Parsed ' + report.parsedItemCount + ' items from CTFtime upcoming events; rejected ' + report.invalidItemCount + ' date-window outliers.';
+    report.unreachableOfficialUrlCount = enrichment.unreachableOfficialUrlCount;
+    report.note = 'Parsed ' + report.parsedItemCount + ' items from CTFtime upcoming events; extracted ' + enrichment.officialUrlCount + ' reachable official URLs from detail pages; kept ' + enrichment.unreachableOfficialUrlCount + ' items on CTFtime because their official URLs were unreachable; rejected ' + report.invalidItemCount + ' date-window outliers.';
   } catch (err) {
     report.error = err.name === 'AbortError' ? 'Timeout after ' + CRAWL_TIMEOUT_MS + 'ms' : err.message;
     report.note = 'CTFtime fetch failed: ' + report.error;
@@ -209,6 +327,8 @@ try {
 const reports = await Promise.all(adapters.map(adapter => adapter()));
 
 const harvestedItems = reports.flatMap(report => report.items);
+const ctftimeExistingItems = existingItems.filter(item => /^https:\/\/ctftime\.org\/event\/\d+/i.test(item.url || '') || /^https:\/\/ctftime\.org\/event\/\d+/i.test(item.sourceUrl || ''));
+const existingCtftimeEnrichment = await enrichCtftimeItemsWithOfficialUrls(ctftimeExistingItems);
 const parsedItemCount = reports.reduce((s, r) => s + (r.parsedItemCount || 0), 0);
 const parserHealthy = reports.every(r => r.parserHealthy !== false);
 const parserDropOk = previousParsedItemCount === null || parsedItemCount >= Math.floor(previousParsedItemCount * 0.5);
@@ -229,9 +349,9 @@ function mergeFetchedWithExisting(fetchedItems, currentItems) {
 }
 
 if (harvestedItems.length >= CTFTIME_MIN_ITEMS && parserHealthy && parserDropOk) {
-  const mergedItems = mergeFetchedWithExisting(harvestedItems, existingItems);
+  const mergedItems = mergeFetchedWithExisting([...existingCtftimeEnrichment.items, ...harvestedItems], existingItems);
   fs.writeFileSync(existingItemsUrl, JSON.stringify(mergedItems, null, 2) + '\n', 'utf8');
-  console.log('crawler wrote ' + harvestedItems.length + ' fetched items; preserved/merged total ' + mergedItems.length + ' items');
+  console.log('crawler wrote ' + harvestedItems.length + ' fetched items; enriched ' + existingCtftimeEnrichment.officialUrlCount + ' existing CTFtime items; preserved/merged total ' + mergedItems.length + ' items');
 } else {
   console.log('parser emitted ' + harvestedItems.length + ' items (health gate failed or threshold not met); preserving ' + existingItems.length + ' curated items in data/items.json');
 }
@@ -249,5 +369,8 @@ fs.writeFileSync(new URL('../data/crawl-report.json', import.meta.url), JSON.str
   previousParsedItemCount,
   parserHealthy,
   parserDropOk,
+  existingCtftimeItems: ctftimeExistingItems.length,
+  existingCtftimeOfficialUrlCount: existingCtftimeEnrichment.officialUrlCount,
+  existingCtftimeUnreachableOfficialUrlCount: existingCtftimeEnrichment.unreachableOfficialUrlCount,
   adapters: reports
 }, null, 2) + '\n', 'utf8');

@@ -22,9 +22,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - name: Prepare public artifact
+        shell: bash
+        run: |
+          rm -rf dist
+          mkdir -p dist/data
+          cp index.html dist/index.html
+          cp data/items.json dist/data/items.json
+          cp data/sources.json dist/data/sources.json
+          touch dist/.nojekyll
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:
-          path: .
+          path: dist
       - id: deployment
         uses: actions/deploy-pages@v5

@@ -13,6 +13,20 @@ for (const item of items) {
   }
   if (Number.isNaN(Date.parse(item.deadline))) errors.push(`${item.id}: invalid deadline ${item.deadline}`);
   if (item.url && !/^https?:\/\//.test(item.url)) errors.push(`${item.id}: invalid url ${item.url}`);
+  if (item.sourceUrl && !/^https?:\/\//.test(item.sourceUrl)) errors.push(`${item.id}: invalid sourceUrl ${item.sourceUrl}`);
+  if (String(item.id || '').startsWith('ctftime-')) {
+    if (!/^https:\/\/ctftime\.org\/event\/\d+/i.test(item.sourceUrl || item.url || '')) {
+      errors.push(`${item.id}: CTFtime-derived items must keep the CTFtime event page as sourceUrl`);
+    }
+    if (item.verificationLevel === 'official_via_ctftime') {
+      if (!item.canonicalUrl || item.canonicalUrl !== item.url) {
+        errors.push(`${item.id}: official_via_ctftime items must set canonicalUrl equal to url`);
+      }
+      if (/^https:\/\/ctftime\.org\/event\/\d+/i.test(item.url || '')) {
+        errors.push(`${item.id}: official_via_ctftime items must point url at the extracted official URL`);
+      }
+    }
+  }
   const text = JSON.stringify(item);
   if (/\?\?\?\?|�/.test(text)) errors.push(`${item.id}: contains mojibake placeholder`);
 }
